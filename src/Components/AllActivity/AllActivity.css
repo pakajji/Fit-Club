@@ -1,0 +1,12 @@
+.AllActivity {
+    padding: 0 100px;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 32px;
+}
+
+.Activity_Summary {
+    font-size: 2rem;
+    text-align: center;
+}

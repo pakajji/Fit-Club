@@ -1,0 +1,19 @@
+.SumCal {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.SumCal > a > img {
+    height: 120px;
+}
+
+.SumCal > h3 {
+    background-color: var(--brown3);
+    border-radius: 10px;
+    font-size: 2rem;
+    height: 64px;
+    width: 250px;
+    text-align: center;
+    line-height: 2;
+}

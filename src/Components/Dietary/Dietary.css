@@ -1,0 +1,128 @@
+.blue {
+    background-color: #86e3ce;
+}
+
+.green {
+    background-color: #d0e6a5;
+}
+
+.yellow {
+    background-color: #ffdd94;
+}
+
+.red {
+    background-color: #fa897b;
+}
+
+.purple {
+    background-color: #ccabd8;
+}
+
+
+h1.meal_today {
+    font-size: 2.4rem;
+    text-align: center;
+    line-height: 64px;
+}
+
+.dietary {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.row {
+    display: flex;
+    align-items: stretch;
+}
+
+.meals {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    padding: 32px 0;
+    gap: 24px;
+}
+
+.meal_card {
+    list-style-type: none;
+    text-align: center;
+    padding: 12px;
+    height: 400px;
+    width: 240px;
+    border-radius: 10em/3em;
+    box-shadow: var(--shadow);
+}
+
+.meal_card h2 {
+    font-size: 2.4rem;
+    font-weight: 600;
+    line-height: 48px;
+    color: white;
+    text-shadow: var(--shadow);
+    margin: 16px 0;
+}
+
+.plusMenu_btn {
+    font-size: 64px;
+    color: var(--brown2);
+    line-height: 64px;
+    text-decoration: none;
+    padding: 0 12px;
+    border-radius: 50%;
+    border: none;
+    cursor: pointer;
+    position: relative;
+    left: 80px;
+}
+
+.plusMenu_btn:hover {
+    background-color: white;
+}
+
+@media screen and (max-width: 768px) {
+    /*.meals {
+        display: inline-block;
+        width: 85%;
+        height: 500px;
+        overflow: hidden;
+        border: 1px solid black;
+    }
+
+    .meal_card {
+        display: inline-block;
+        width: 40%;
+    }*/
+
+    /*.meals {
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        height: 500px;
+        overflow: hidden;
+        border: 1px solid black;
+    }*/
+
+    /*.meals {
+        display: inline-block;
+        width: 100%;
+        height: 464px;
+        padding: 0 15%;
+        gap: 0;
+        overflow: hidden;
+    }
+
+    .meal_card {
+        display: inline-block;
+        width: 100%;
+        margin: 32px 0;
+    }
+
+    .prev_next_btn {
+        display: block;
+    }
+
+    .dietary > .row {
+        width: 100%;
+    }*/
+}

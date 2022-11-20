@@ -1,0 +1,33 @@
+.App {
+    margin: 0;
+    padding: 0;
+    box-sizing: inherit;
+    font-family: 'Prompt', sans-serif;
+    font-size: 62.5%;
+    scroll-behavior: smooth scroll;
+    color: var(--brown1);
+}
+
+:root {
+  --blue: #86e3ce;
+  --green: #d0e6a5;
+  --yellow: #ffdd94;
+  --red: #fa897b;
+  --purple: #ccabd8;
+  --brown1: #251d1c;
+  --brown2: #443c3c;
+  --brown3: #9a9590;
+  --brown4: #d0cbc8;
+  --brown5: #eeeae7;
+  --shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  --dark: #212121;
+}
+
+.light {
+  background-color: white;
+}
+
+.dark {
+  background-color: var(--dark);
+  color: white;
+}

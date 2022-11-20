@@ -1,0 +1,11 @@
+.Piechart-area {
+  display: block;
+  margin: 0 auto;
+  max-width: 500px;
+  max-height: 500px;
+  min-width: 500px;
+  min-height: 500px;
+  padding-top: 100px;
+  padding-left: 36px;
+  padding-right: 36px;
+}

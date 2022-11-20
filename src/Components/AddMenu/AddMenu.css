@@ -1,0 +1,100 @@
+.addMenu {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 400px;
+    padding: 0 50px 100px;
+    border-radius: 20px;
+    gap: 16px;
+    box-shadow: rgba(0, 0, 0, 0.3) 0px 22px 70px 4000px;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 3;
+}
+
+.addMenu input {
+    width: 80%;
+    height: 50px;
+    font-size: 1.8rem;
+    text-align: center;
+    border: none;
+    border-radius: 12px;
+    color: var(--brown1)
+}
+
+.addMenu input:focus{
+    outline: none;
+}
+
+.addMenu button {
+    margin-top: 12px;
+    width: 120px;
+    height: 70px;
+    font-size: 2rem;
+    font-weight: 600;
+    color: var(--brown2);
+    background-color: white;
+    border: none;
+    border-radius: 12px;
+}
+
+.addMenu button:hover {
+    font-size: 2.1rem;
+}
+
+.during-popup {
+    display: block;
+}
+
+.close {
+    display: block;
+    position: relative;
+    left: 200px;
+    color: white;
+    float: right;
+    font-size: 60px;
+    padding: 0;
+}
+
+.close:hover,.close:focus {
+    color: var(--brown2);
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.hiddenPopUp {
+    display: none;
+}
+
+.blue {
+    background-color: #86e3ce;
+}
+
+.green {
+    background-color: #d0e6a5;
+}
+
+.yellow {
+    background-color: #ffdd94;
+}
+
+.red {
+    background-color: #fa897b;
+}
+
+h3.meal-name {
+    color: white;
+    font-size: 2.4rem;
+    margin-top: 0;
+}
+
+.form-add-menu {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    align-items: center;
+    justify-content: center;
+}

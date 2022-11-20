@@ -1,0 +1,34 @@
+.card {
+    min-width: 200px;
+    width: 200px;
+    padding: 10px;
+    border-radius: 10px;
+    text-align: center;
+    font-size: 1.2rem;
+    color: var(--brown1);
+}
+
+.card:hover {
+    transition: transform 0.15s;
+    transform: scale(1.05);
+}
+
+.blue {
+    background-color: #86e3ce;
+}
+
+.green {
+    background-color: #d0e6a5;
+}
+
+.yellow {
+    background-color: #ffdd94;
+}
+
+.red {
+    background-color: #fa897b;
+}
+
+.purple {
+    background-color: #ccabd8;
+}
