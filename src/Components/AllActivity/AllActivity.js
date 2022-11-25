@@ -8,23 +8,23 @@ const AllActivity = () => {
         activity: 'swim',
         time: 20,
         distance: 100,
-        round: 2,
+        set: 2
     },{
         activity: 'run',
         time: 30,
         distance: 50,
-        round: 10,
+        set: 10
     }]
     
     return (
         <div>
-            <h2 className="Activity_Summary">Activity Summary</h2>
+            <h2 id="Dashboard" className="Activity_Summary">Activity Summary</h2>
             <div className="AllActivity">
             {activity.map(detail => {
                 return <Activity activity={detail.activity}
                                 time={detail.time}
                                 distance={detail.distance}
-                                round={detail.round}/>  
+                                set={detail.set}/>  
             })}
             <AddActivityCard/>
             </div>

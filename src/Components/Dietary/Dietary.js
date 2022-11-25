@@ -14,31 +14,37 @@ const Dietary = () => {
 
 
     return (
-        <div className="dietary">
+        <div id="Dietary" className="dietary">
             <h1 className="meal_today">Meals Today</h1>
-            <div className="row">
-                <ul className="meals">
-                    <li className="meal_card blue">
+            <div className="grid-container">
+                <div className="grid">
+                    <div className="meal_card blue">
                         <h2 className="mealName">Breakfast</h2>
                         <MenuList menuCal={breakfast}/>
                         <button id="breakfast" className="plusMenu_btn" onClick={() => { setMeal('breakfast'); setPopUp(true); }}>+</button>
-                    </li>
-                    <li className="meal_card green">
+                    </div>
+                </div>
+                <div className="grid">
+                    <div className="meal_card green">
                         <h2 className="mealName">Lunch</h2>
                         <MenuList menuCal={lunch} />
                         <button id="lunch" className="plusMenu_btn" onClick={() => { setMeal('lunch'); setPopUp(true); }}>+</button>
-                    </li>
-                    <li className="meal_card yellow">
+                    </div>
+                </div>
+                <div className="grid">
+                    <div className="meal_card yellow">
                         <h2 className="mealName">Dinner</h2>
                         <MenuList menuCal={dinner} />
                         <button id="dinner" className="plusMenu_btn" onClick={() => { setMeal('dinner'); setPopUp(true); }}>+</button>
-                    </li>
-                    <li className="meal_card red">
+                    </div>
+                </div>
+                <div className="grid">
+                    <div className="meal_card red">
                         <h2 className="mealName">Snacks</h2>
                         <MenuList menuCal={snacks} />
                         <button id="snacks" className="plusMenu_btn" onClick={() => { setMeal('snacks'); setPopUp(true); }}>+</button>
-                    </li>
-                </ul>
+                    </div>
+                </div>
             </div>
             {popUp && <AddMenu duringPopUp={duringPopUp} setPopUp={setPopUp} meal={meal} />}
         </div>

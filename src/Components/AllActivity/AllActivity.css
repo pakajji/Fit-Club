@@ -1,5 +1,4 @@
 .AllActivity {
-    padding: 0 100px;
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
@@ -7,6 +6,7 @@
 }
 
 .Activity_Summary {
-    font-size: 2rem;
+    font-size: 2.4rem;
     text-align: center;
+    line-height: 64px;
 }

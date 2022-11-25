@@ -1,6 +1,6 @@
 import './Activity.css'
 
-const Activity = ({activity,time,distance,round}) => {
+const Activity = ({activity,time,distance,set}) => {
     let activityColor
     switch (activity) {
         case 'walk':
@@ -24,9 +24,15 @@ const Activity = ({activity,time,distance,round}) => {
     return (
         <div className={`card ${activityColor}`}>
             <h2>{activity}</h2>
-            <p>Time : {time}</p>
-            <p>Distance : {distance}</p>
-            <p>Round : {round}</p>
+            <div className="activity-detail">
+                <p>Description</p>
+                <p>Date</p>
+                <p>Numbar of set : {set}</p> 
+                { distance && <p>Distance : {distance}</p>}
+                <p>Calories burned</p>
+                <p>Time : {time}</p>
+                <p>Heart rate</p>
+            </div>
         </div>
     )
 }

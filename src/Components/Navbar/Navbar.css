@@ -1,27 +1,28 @@
-.Navbar {
+#notHamburger {
     display: flex;
-    justify-content : space-between;
+    justify-content: space-between;
     align-items: center;
     position: fixed;
     box-shadow: var(--shadow);
     height: 64px;
     width: 100%;
     z-index: 2;
+    background-color: white;
 }
-   
-.Navbar > ul {
+
+#notHamburger>ul {
     margin: 12px 24px;
     list-style-type: none;
     padding: 0;
 }
 
-.Navbar > ul > li {
+#notHamburger>ul>li {
     display: inline-block;
     padding: 0 12px;
     font-size: 1.2rem;
 }
-   
-.Navbar > ul > li:hover {
+
+#notHamburger>ul>li,a:hover {
     color: var(--brown3);
     cursor: pointer;
 }
@@ -47,7 +48,7 @@
 }
 
 .Login_btn:hover {
-    border: none;
+    border: 2px solid var(--brown2);
     background-color: var(--brown2);
     color: white;
     cursor: pointer;
@@ -64,4 +65,74 @@
 
 .show {
     display: block;
+}
+
+.show-flex {
+    display: flex;
+}
+
+#Hamburger {
+    display: none;
+}
+
+a {
+    text-decoration: none;
+    color: var(--brown1);
+}
+
+@media only screen and (max-width: 768px) {
+
+    #notHamburger{
+        display: none;
+    }
+
+    #Hamburger {
+        display: block;
+        position: fixed;
+        box-shadow: var(--shadow);
+        height: 64px;
+        width: 100%;
+        z-index: 2;
+        background-color: white;
+    }
+    
+    #Hamburger>img {
+        display: block;
+        height: 48px;
+        margin-left: 16px;
+        margin-top: 8px;
+        cursor: pointer;
+    }
+    
+    .ham-list {
+        flex-direction: column;
+        list-style-type: none;
+        width: 200px;
+        margin-top: 0;
+        align-items: center;
+    }
+    
+    .ham-list>li {
+        display: flex;
+        justify-content: center;
+        margin-left: -40px;
+        padding: 16px 40px;
+        width: 100%;
+        font-size: 1.6rem;
+        background-color: white;
+    }
+    
+    .ham-list>li:hover {
+        color: var(--brown1);
+        background-color: var(--brown4);
+    }
+    
+    .Profile_Pic_Ham {
+        border-radius: 50%;
+        height: 120px;
+        width: 120px;
+        object-fit: cover;
+        place-items: center;
+        padding: 8px 0;
+    }
 }

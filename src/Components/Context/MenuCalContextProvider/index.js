@@ -8,8 +8,6 @@ const MenuCalContextProvider = ({children}) => {
     const [dinner,setDinner] = useState([])
     const [snacks,setSnacks] = useState([])
 
-    const [backgroundColor,setBackgroundColor] = useState('light')
-
 
 
     return (<MenuCalContext.Provider value={{
@@ -17,9 +15,7 @@ const MenuCalContextProvider = ({children}) => {
         breakfast,setBreakfast,
         lunch,setLunch,
         dinner,setDinner,
-        snacks,setSnacks,
-        
-        backgroundColor,setBackgroundColor
+        snacks,setSnacks
     }}>{children}</MenuCalContext.Provider>)
 }
 

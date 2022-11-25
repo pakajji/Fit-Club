@@ -2,6 +2,7 @@
     display: flex;
     justify-content: space-around;
     align-items: center;
+    padding-bottom: 64px;
 }
 
 .SumCal > a > img {
@@ -9,11 +10,12 @@
 }
 
 .SumCal > h3 {
-    background-color: var(--brown3);
+    background-color: var(--brown4);
     border-radius: 10px;
     font-size: 2rem;
     height: 64px;
     width: 250px;
     text-align: center;
     line-height: 2;
+    color: var(--brown1);
 }
