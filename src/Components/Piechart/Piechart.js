@@ -26,7 +26,10 @@ const data = {
 
 function Piechart() {
     return(
-      <Pie className="Piechart-area" data={data}/>)
+      <div className="Piechart-area">
+        <Pie data={data}/>
+      </div>
+      )
   }
 
 export default Piechart;
