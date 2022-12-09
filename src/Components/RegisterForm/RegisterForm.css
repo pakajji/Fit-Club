@@ -1,10 +1,4 @@
-*{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-.container {
+.register-container {
     max-width: 900px;
     margin: 0 auto;
 }
@@ -23,7 +17,7 @@
     text-align: center;
   }
 
-.form_container {
+.register-form_container {
     margin-top: 18px;
     display: flex;
     flex-wrap: wrap;
@@ -32,14 +26,14 @@
     width: 100%;
 }
 
-.name_container {
+.register-name_container {
     display: flex;
     gap: 10px;
     width: 100%;
     margin-top: 18px;        
 }
 
-.form_container input[type="text"], .form_container input[type="password"], .form_container input[type="email"] {
+.register-form_container input[type="text"], .register-form_container input[type="password"], .register-form_container input[type="email"] {
     padding: 12px 8px;
     border: 1px ridge;
     border-radius: 8px;
@@ -48,17 +42,17 @@
     
 }
 
-.form_container label {
+.register-form_container label {
     justify-content: start;
 }
 
-.button_container {
+.register-button_container {
     display: flex;
     justify-content: center;
     margin-top: 20px;
 }
 
-button {
+.register-btn {
     background-color: gray;
     border: 2px transparent;
     border-radius: 8px;

@@ -27,7 +27,7 @@
     cursor: pointer;
 }
 
-.Profile_Pic {
+.nav-Profile_Pic {
     border-radius: 50%;
     height: 40px;
     width: 40px;
@@ -37,7 +37,7 @@
     cursor: pointer;
 }
 
-.Login_btn {
+.nav-Login_btn {
     font-size: 1.2rem;
     border: 2px solid var(--brown2);
     background-color: white;
@@ -47,14 +47,14 @@
     margin: 12px 24px;
 }
 
-.Login_btn:hover {
+.nav-Login_btn:hover {
     border: 2px solid var(--brown2);
     background-color: var(--brown2);
     color: white;
     cursor: pointer;
 }
 
-.FitClub {
+.nav-FitClub {
     font-size: 1.4rem;
     font-weight: 600;
 }
