@@ -1,25 +1,21 @@
 import "./App.css";
-import Dietary from "../Dietary/Dietary";
-import AllActivity from "../AllActivity/AllActivity";
 import Navbar from "../Navbar/Navbar";
-import Piechart from "../Piechart/Piechart";
-import SumCal from "../SumCal/SumCal";
+import Overview from "../Overview/Overview";
 import LoginForm from "../LoginForm/LoginForm";
 import RegisterForm from "../RegisterForm/RegisterForm";
 import ActivitiesForm from "../ActivitiesForm/ActivitiesForm";
-//import {BrowserRouter as Router, Route, Routes} from 'react-router-dom'
+import { Route, Routes } from 'react-router-dom'
 
 function App() {
   return (
     <div className="App">
       <Navbar />
-      <Piechart />
-      <AllActivity />
-      <Dietary />
-      <SumCal />
-      <LoginForm />
-      <RegisterForm />
-      <ActivitiesForm />
+      <Routes>
+        <Route path="/" exact element={<Overview/>}></Route>
+        <Route path="/login" element={<LoginForm/>}></Route>
+        <Route path="/register" element={<RegisterForm/>}></Route>
+        <Route path="/add-activity" element={<ActivitiesForm/>}></Route>
+      </Routes>
     </div>
   );
 }

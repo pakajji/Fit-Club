@@ -1,11 +1,12 @@
 import './Navbar.css'
 import { useState } from 'react'
 import ProfliePopUp from '../ProfliePopUp/ProfliePopUp'
+import { Link } from 'react-router-dom'
 
 const Navbar = () => {
 
     //สลับปุ่ม Login กับ ProfilePic
-    const [logIn, setLogIn] = useState(true)
+    const [logIn, setLogIn] = useState(false)
     const showLogIn = logIn ? "hidden" : "show"
     let switchBtn = !logIn
     const showProfilePic = switchBtn ? "hidden" : "show"
@@ -25,7 +26,7 @@ const Navbar = () => {
             <ul className={`ham-list ${hamburgerList}`}>
                 <li className='Ham-pic-login'>
                     <img className={`Profile_Pic_Ham ${showProfilePic}`} alt="Profile" src="https://cdn.shopify.com/s/files/1/0210/2968/3222/files/image17.jpg?v=1646429188"/>
-                    <button className={`nav-Login_btn ${showLogIn}`}>Log In</button>
+                    <Link className={`nav-Login_btn ${showLogIn}`} to="/login">Log In</Link>
                 </li>
                 <li><a href="#Dashboard">Dashboard</a></li>
                 <li><a href="#Dietary">Dietary</a></li>
@@ -39,7 +40,7 @@ const Navbar = () => {
                 <li><a href="#Dietary">Dietary</a></li>
             </ul>
             <img onClick={()=>setProfilePopUp(true)} className={`nav-Profile_Pic ${showProfilePic}`} alt="Profile" src="https://cdn.shopify.com/s/files/1/0210/2968/3222/files/image17.jpg?v=1646429188"/>
-            <button className={`nav-Login_btn ${showLogIn}`}>Log In</button>
+            <Link className={`nav-Login_btn ${showLogIn}`} to="/login">Log In</Link>
             {profilePopUp && <ProfliePopUp duringProfilePopUp={duringProfilePopUp} setProfilePopUp={setProfilePopUp}/>}
         </div>
     </div>
