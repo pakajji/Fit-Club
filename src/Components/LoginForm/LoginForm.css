@@ -1,10 +1,4 @@
-*{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-.container {
+.login-from-container {
     max-width: 900px;
     margin: 0 auto;
 }
@@ -23,7 +17,7 @@
     text-align: center;
   }
 
-.form_container {
+.login-from-form_container {
     margin-top: 18px;
     display: flex;
     justify-content: center;
@@ -31,24 +25,24 @@
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
 }
 
-.form_container input[type="email"], .form_container input[type="password"] {
+.login-from-form_container input[type="email"], .login-from-form_container input[type="password"] {
     padding: 12px 8px;
     border: 1px ridge;
     border-radius: 8px;
     width: 100%;
 }
 
-.form_container label {
+.login-from-form_container label {
     justify-content: start;
 }
 
-.button_container {
+.login-from-button_container {
     display: flex;
     justify-content: center;
     margin-top: 20px;
 }
 
-button {
+.login-from-btn {
     background-color: gray;
     border: 2px transparent;
     border-radius: 8px;

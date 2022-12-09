@@ -1,10 +1,4 @@
-*{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-.container {
+.activity-from-container {
     max-width: 900px;
     margin: 0 auto;
 }
@@ -23,42 +17,39 @@
     text-align: center;
   }
 
-.form_container {
+.activity-from-form_container {
     margin-top: 18px;
     display: flex;
     flex-direction: column;
     gap: 10px;
-    width: 100%;
 }
 
-.form_container select {
+.activity-from-form_container select {
     text-align: start;
     padding: 12px 12px;
     border: 1px ridge;
     border-radius: 8px;
-    width: 100%;
 }
 
-.form_container input[type="text"], .form_container input[type="date"], .form_container input[type="time"] {
+.activity-from-form_container input[type="text"], .activity-from-form_container input[type="date"], .activity-from-form_container input[type="time"] {
     padding: 12px 12px;
     border: 1px ridge;
     border-radius: 8px;
-    width: 100%;
 }
 
-.form_container label, .form_container label[type="text"], .form_container label[type="date"], .form_container label[type="label"]{
+.activity-from-form_container label, .activity-from-form_container label[type="text"], .activity-from-form_container label[type="date"], .activity-from-form_container label[type="label"]{
     justify-content: start;
     font-size: small;
     text-align: start;
 }
 
-.button_container {
+.activity-from-button_container {
     display: flex;
     justify-content: center;
     margin-top: 20px;
 }
 
-button {
+.activity-from-btn {
     background-color: gray;
     border: 2px transparent;
     border-radius: 8px;
