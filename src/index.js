@@ -4,14 +4,17 @@ import "./index.css";
 import ErrorBoundary from "./Components/ErrorBoundary/ErrorBoundary";
 import App from "./Components/App/App";
 import MenuCalContextProvider from "./Components/Context/MenuCalContextProvider";
+import { BrowserRouter } from "react-router-dom";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
     <ErrorBoundary>
       <MenuCalContextProvider>
-        <App />
-      </MenuCalContextProvider>
+        <BrowserRouter>
+          <App />
+        </BrowserRouter>
+    </MenuCalContextProvider>
     </ErrorBoundary>
   </React.StrictMode>
 );
