@@ -44,79 +44,68 @@ function PersonalProfile() {
             >
               <div className="form_container">
                 <div className="name_container">
-                  <label>
-                    Name:
-                    <input
-                      type="text"
-                      value={name}
-                      onChange={(event) => setName(event.target.value)}
-                    />
-                  </label>
-                  <label>
-                    Surname:
-                    <input
-                      type="text"
-                      value={surname}
-                      onChange={(event) => setSurname(event.target.value)}
-                    />
-                  </label>
+                  <input
+                    type="text"
+                    placeholder="Full Name"
+                    value={name}
+                    onChange={(event) => setName(event.target.value)}
+                  />
+                  <input
+                    type="text"
+                    placeholder="Surname"
+                    value={surname}
+                    onChange={(event) => setSurname(event.target.value)}
+                  />
                 </div>
 
                 <div className="name_container">
-                  <label>
-                    Nickname:
-                    <input
-                      type="text"
-                      value={nickname}
-                      onChange={(event) => setNickname(event.target.value)}
-                    />
-                  </label>
-                  <label>
-                    Date of Birth:
-                    <input
-                      type="date"
-                      value={dateOfBirth}
-                      onChange={(event) => setDateOfBirth(event.target.value)}
-                    />
-                  </label>
+                  <input
+                    type="text"
+                    placeholder="Nickname"
+                    value={nickname}
+                    onChange={(event) => setNickname(event.target.value)}
+                  />
+                  <input
+                    type="date"
+                    placeholder="Date of Birth"
+                    value={dateOfBirth}
+                    onChange={(event) => setDateOfBirth(event.target.value)}
+                  />
                 </div>
 
                 <div className="name_container">
-                  <label>
-                    Weight:
-                    <input
-                      type="text"
-                      value={weight}
-                      onChange={(event) => setWeight(event.target.value)}
-                    />
-                  </label>
-                  <label>
-                    Height:
-                    <input
-                      type="text"
-                      value={height}
-                      onChange={(event) => setHeight(event.target.value)}
-                    />
-                  </label>
+                  <input
+                    type="text"
+                    placeholder="Weight"
+                    value={weight}
+                    onChange={(event) => setWeight(event.target.value)}
+                  />
+                  <input
+                    type="text"
+                    placeholder="Height"
+                    value={height}
+                    onChange={(event) => setHeight(event.target.value)}
+                  />
+                </div>
 
-                  <div className="gender_container">
-                    <label>Gender:</label>
-                  </div>
-                  <div className="name_container">
-                    <select
-                      value={sex}
-                      onChange={(event) => setSex(event.target.value)}
-                    >
-                      <option value="male">Male</option>
-                      <option value="female">Female</option>
-                      <option value="other">Other</option>
-                    </select>
-                  </div>
+                <div className="gender_container">
+                  <label for="gender">Gender</label>
+                </div>
+
+                <div className="name_container">
+                  <select
+                    value={sex}
+                    onChange={(event) => setSex(event.target.value)}
+                  >
+                    <option value="male">Male</option>
+                    <option value="female">Female</option>
+                    <option value="other">Other</option>
+                  </select>
                 </div>
 
                 <div className="button_container">
                   <button className="profile-from-btn" type="submit">
-                    Save
+                    Edit
                   </button>
                 </div>
               </div>
