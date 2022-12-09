@@ -1,4 +1,4 @@
-.add-card {
+.add-activity-card {
     display: block;
     min-width: 250px;
     min-height: 200px;
@@ -15,7 +15,7 @@
     text-decoration: none;
 }
 
-.add-card button {
+.add-activity-card button {
     font-size: 100px;
     color: var(--brown2);
     line-height: 64px;
@@ -26,7 +26,7 @@
     cursor: pointer;
 }
 
-.add-card:hover {
+.add-activity-card:hover {
     transition: transform 0.15s;
     transform: scale(1.05);
 }

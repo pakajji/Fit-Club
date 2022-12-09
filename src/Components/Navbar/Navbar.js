@@ -25,7 +25,7 @@ const Navbar = () => {
             <ul className={`ham-list ${hamburgerList}`}>
                 <li className='Ham-pic-login'>
                     <img className={`Profile_Pic_Ham ${showProfilePic}`} alt="Profile" src="https://cdn.shopify.com/s/files/1/0210/2968/3222/files/image17.jpg?v=1646429188"/>
-                    <button className={`Login_btn ${showLogIn}`}>Log In</button>
+                    <button className={`nav-Login_btn ${showLogIn}`}>Log In</button>
                 </li>
                 <li><a href="#Dashboard">Dashboard</a></li>
                 <li><a href="#Dietary">Dietary</a></li>
@@ -34,12 +34,12 @@ const Navbar = () => {
 
         <div id='notHamburger'>
             <ul>
-                <li className='FitClub'><a href="#">Fit Club</a></li>
+                <li className='nav-FitClub'><a href="#">Fit Club</a></li>
                 <li><a href="#Dashboard">Dashboard</a></li>
                 <li><a href="#Dietary">Dietary</a></li>
             </ul>
-            <img onClick={()=>setProfilePopUp(true)} className={`Profile_Pic ${showProfilePic}`} alt="Profile" src="https://cdn.shopify.com/s/files/1/0210/2968/3222/files/image17.jpg?v=1646429188"/>
-            <button className={`Login_btn ${showLogIn}`}>Log In</button>
+            <img onClick={()=>setProfilePopUp(true)} className={`nav-Profile_Pic ${showProfilePic}`} alt="Profile" src="https://cdn.shopify.com/s/files/1/0210/2968/3222/files/image17.jpg?v=1646429188"/>
+            <button className={`nav-Login_btn ${showLogIn}`}>Log In</button>
             {profilePopUp && <ProfliePopUp duringProfilePopUp={duringProfilePopUp} setProfilePopUp={setProfilePopUp}/>}
         </div>
     </div>
