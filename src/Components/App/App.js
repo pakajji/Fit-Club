@@ -8,6 +8,7 @@ import LoginForm from "../LoginForm/LoginForm";
 import RegisterForm from "../RegisterForm/RegisterForm";
 import PersonalProfileForm from "../PersonalProfileForm/PersonalProfileForm";
 import ActivitiesForm from "../ActivitiesForm/ActivitiesForm";
+import {BrowserRouter as Router, Route, Routes} from 'react-router-dom'
 
 function App() {
   return (
