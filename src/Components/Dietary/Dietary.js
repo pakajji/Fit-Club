@@ -16,7 +16,7 @@ const Dietary = () => {
     return (
         <div id="Dietary" className="dietary">
             <h1 className="meal_today">Meals Today</h1>
-            <div className="grid-container">
+            <div className="dietary-grid-container">
                 <div className="grid">
                     <div className="meal_card blue">
                         <h2 className="mealName">Breakfast</h2>

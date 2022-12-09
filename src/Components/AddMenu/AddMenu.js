@@ -91,7 +91,7 @@ const AddMenu = (props) => {
 
     return (
         <div className={`addMenu ${duringPopUp} ${mealColor}`}>
-            <span className="close" onClick={() => setPopUp(false)}>&times;</span>
+            <span className="add-menu-close" onClick={() => setPopUp(false)}>&times;</span>
             <h3 className='meal-name'>{meal.toUpperCase()}</h3>
             <form onSubmit={saveMenuList} className="form-add-menu">
                 <input id="food-name" type="text" placeholder="Menu" onChange={inputMenu} value={menu} />

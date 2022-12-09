@@ -22,7 +22,7 @@ const Activity = ({activity,time,distance,set}) => {
     }
 
     return (
-        <div className={`card ${activityColor}`}>
+        <div className={`activity-card ${activityColor}`}>
             <h2>{activity}</h2>
             <div className="activity-detail">
                 <p>Description</p>

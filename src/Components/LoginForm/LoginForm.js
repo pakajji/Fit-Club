@@ -39,11 +39,11 @@ function LoginForm() {
   //   });
 
   return (
-    <div className="container">
+    <div className="login-from-container">
       <div className="login_box">
         <h1>Login</h1>
         <form onSubmit={handleSubmit}>
-          <div className="form_container">
+          <div className="login-from-form_container">
             <input
               type="email"
               placeholder="Username or Email"
@@ -52,7 +52,7 @@ function LoginForm() {
               required
             />
           </div>
-          <div className="form_container">
+          <div className="login-from-form_container">
             <input
               type="password"
               placeholder="Password:"
@@ -61,12 +61,12 @@ function LoginForm() {
               required
             />
           </div>
-          <div className="form_container">
+          <div className="login-from-form_container">
             <input type="checkbox" name="Remember me" value="Remember me" />
             <label for="Remember me">Remember me</label>
           </div>
-          <div className="button_container">
-            <button type="submit">Login</button>
+          <div className="login-from-button_container">
+            <button className="login-from-btn" type="submit">Login</button>
           </div>
         </form>
       </div>

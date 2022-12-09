@@ -1,4 +1,4 @@
-.card {
+.activity-card {
     min-width: 250px;
     width: 200px;
     padding: 10px;
@@ -8,7 +8,7 @@
     color: var(--brown1);
 }
 
-.card:hover {
+.activity-card:hover {
     transition: transform 0.15s;
     transform: scale(1.05);
 }
@@ -33,7 +33,7 @@
     background-color: #ccabd8;
 }
 
-.card > h2 {
+.activity-card > h2 {
     margin: 0;
 }
 

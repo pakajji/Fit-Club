@@ -35,12 +35,12 @@ function RegisterForm() {
   };
 
   return (
-    <div className="container">
+    <div className="register-container">
       <div className="register_box">
         <h1>Register Account Form</h1>
         <form onSubmit={handleSubmit}>
-          <div className="form_container">
-            <div className="name_container">
+          <div className="register-form_container">
+            <div className="register-name_container">
               <input
                 type="text"
                 placeholder="Name"
@@ -76,7 +76,7 @@ function RegisterForm() {
               required
             />
           </div>
-          <div className="form_container">
+          <div className="register-form_container">
             <label>
               <input type="checkbox" aria-label="Agree to terms" />
               <span>
@@ -85,8 +85,8 @@ function RegisterForm() {
               </span>
             </label>
           </div>
-          <div className="button_container">
-            <button type="submit">Create Account</button>
+          <div className="register-button_container">
+            <button className="register-btn" type="submit">Create Account</button>
           </div>
         </form>
       </div>

@@ -60,11 +60,11 @@ function ActivitiesForm() {
   };
 
   return (
-    <div className="container">
+    <div className="activity-from-container">
       <div className="exercise_box">
         <h1>New Exercise Activity</h1>
         <form onSubmit={handleSubmit}>
-          <div className="form_container">
+          <div className="activity-from-form_container">
             <label for="activity">Activity</label>
             <select name="form_container" id="form_container">
               <option value="run" value={type} onChange={handleChange}>
@@ -85,7 +85,7 @@ function ActivitiesForm() {
             </select>
           </div>
 
-          <div className="form_container">
+          <div className="activity-from-form_container">
             <label for="description">Description</label>
             <input
               type="text"
@@ -96,7 +96,7 @@ function ActivitiesForm() {
             />
           </div>
 
-          <div className="form_container">
+          <div className="activity-from-form_container">
             <label for="date">Date</label>
             <input
               type="date"
@@ -107,7 +107,7 @@ function ActivitiesForm() {
             />
           </div>
 
-          <div className="form_container">
+          <div className="activity-from-form_container">
             <label for="time">Time</label>
             <input
               type="time"
@@ -118,7 +118,7 @@ function ActivitiesForm() {
             />
           </div>
 
-          <div className="form_container">
+          <div className="activity-from-form_container">
             <label for="numberset">Number of sets</label>
             <input
               type="text"
@@ -128,7 +128,7 @@ function ActivitiesForm() {
             />
           </div>
 
-          <div className="form_container">
+          <div className="activity-from-form_container">
             <label for="distance">Distance</label>
             <input
               type="text"
@@ -138,7 +138,7 @@ function ActivitiesForm() {
             />
           </div>
 
-          <div className="form_container">
+          <div className="activity-from-form_container">
             <label for="caloriesburned">Calories Burned</label>
             <input
               type="text"
@@ -149,7 +149,7 @@ function ActivitiesForm() {
             />
           </div>
 
-          <div className="form_container">
+          <div className="activity-from-form_container">
             <label for="time">The Duration of Your Exercise</label>
             <input
               placeholder="Required"
@@ -160,7 +160,7 @@ function ActivitiesForm() {
             />
           </div>
 
-          <div className="form_container">
+          <div className="activity-from-form_container">
             <label for="heartrate">Heart Rate</label>
             <input
               type="text"
@@ -170,8 +170,8 @@ function ActivitiesForm() {
             />
           </div>
 
-          <div className="button_container">
-            <button type="submit">Save</button>
+          <div className="activity-from-button_container">
+            <button className="activity-from-btn" type="submit">Save</button>
           </div>
         </form>
       </div>
