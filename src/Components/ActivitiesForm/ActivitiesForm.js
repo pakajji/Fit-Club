@@ -66,22 +66,16 @@ function ActivitiesForm() {
         <form onSubmit={handleSubmit}>
           <div className="activity-from-form_container">
             <label for="activity">Activity</label>
-            <select name="form_container" id="form_container">
-              <option value="run" value={type} onChange={handleChange}>
-                Run
-              </option>
-              <option value="bicycleride" value={type} onChange={handleChange}>
-                Bicycle Ride
-              </option>
-              <option value="swimming" value={type} onChange={handleChange}>
-                Swimming
-              </option>
-              <option value="walk" value={type} onChange={handleChange}>
-                Walk
-              </option>
-              <option value="hiking" value={type} onChange={handleChange}>
-                Hiking
-              </option>
+            <select
+              value={type}
+              onChange={(event) => setType(event.target.value)}
+              required
+            >
+              <option value="run">Run</option>
+              <option value="bicycleride">Bicycle Ride</option>
+              <option value="swimming">Swimming</option>
+              <option value="walk">Walk</option>
+              <option value="hiking">Hiking</option>
             </select>
           </div>
 
