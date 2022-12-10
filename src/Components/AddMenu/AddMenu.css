@@ -49,7 +49,7 @@
     display: block;
 }
 
-.close {
+.add-menu-close {
     display: block;
     position: relative;
     left: 200px;
@@ -59,7 +59,7 @@
     padding: 0;
 }
 
-.close:hover,.close:focus {
+.add-menu-close:hover,.add-menu-close:focus {
     color: var(--brown2);
     text-decoration: none;
     cursor: pointer;

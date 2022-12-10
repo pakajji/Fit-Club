@@ -4,6 +4,7 @@
     display: flex;
     max-width: 200px;
     align-items: center;
+    justify-content: center;
 }
 
 .personal-right {
@@ -19,7 +20,6 @@
     flex-direction: row;
     /* padding: 200px; */
     max-width: 1200px;
-    min-width: 600px;
     margin: 0 auto;
     background-color: white;
     padding: 100px 0;
@@ -36,7 +36,7 @@
 
 .personalinfo_box {
     max-width: 1200px;
-    min-width: 900px;
+    width: 900px;
     padding: 20px 20px 40px;
     display: flex;
     justify-content: space-around;
@@ -60,7 +60,7 @@
     flex-wrap: wrap;
     justify-content: center;
     /* grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); */
-    width: 100%;
+    
 }
 
 .personal-name_container {
@@ -116,4 +116,18 @@
     color: white;
     transition: 0.3s;
     width: 100%;
+}
+
+@media only screen and (max-width: 768px) {
+    .personalinfo_box {
+        flex-direction: column;
+        align-items: center;
+        width: 90%;
+    }
+}
+
+@media only screen and (max-width: 545px) {
+    .personal-name_container {
+        flex-wrap: wrap
+    }
 }
