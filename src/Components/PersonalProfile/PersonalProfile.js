@@ -25,13 +25,13 @@ function PersonalProfile() {
   };
 
   return (
-    <div className="container">
+    <div className="personal-container">
       <div className="personalinfo_box">
-        <div className="left">
+        <div className="personal-left">
           <UserProfile />
         </div>
 
-        <div className="right">
+        <div className="personal-right">
           <div>
             <div>
               <h1>Personal Information</h1>
@@ -42,8 +42,8 @@ function PersonalProfile() {
                 handleSubmit(event);
               }}
             >
-              <div className="form_container">
-                <div className="name_container">
+              <div className="personal-form_container">
+                <div className="personal-name_container">
                   <input
                     type="text"
                     placeholder="Full Name"
@@ -58,7 +58,7 @@ function PersonalProfile() {
                   />
                 </div>
 
-                <div className="name_container">
+                <div className="personal-name_container">
                   <input
                     type="text"
                     placeholder="Nickname"
@@ -73,7 +73,7 @@ function PersonalProfile() {
                   />
                 </div>
 
-                <div className="name_container">
+                <div className="personal-name_container">
                   <input
                     type="text"
                     placeholder="Weight"
@@ -88,11 +88,11 @@ function PersonalProfile() {
                   />
                 </div>
 
-                <div className="gender_container">
+                <div className="personal-gender_container">
                   <label for="gender">Gender</label>
                 </div>
 
-                <div className="name_container">
+                <div className="personal-name_container">
                   <select
                     value={sex}
                     onChange={(event) => setSex(event.target.value)}
@@ -103,7 +103,7 @@ function PersonalProfile() {
                   </select>
                 </div>
 
-                <div className="button_container">
+                <div className="personal-button_container">
                   <button className="profile-from-btn" type="submit">
                     Edit
                   </button>
