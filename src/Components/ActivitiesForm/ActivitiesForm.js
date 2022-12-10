@@ -2,8 +2,6 @@ import "./ActivitiesForm.css";
 import React, { useState } from "react";
 
 function ActivitiesForm() {
-  // Use the useState hook to store the user's exercise information
-  const [activities, setActivities] = useState([]);
   const [description, setDescription] = useState("");
   const [date, setDate] = useState("");
   const [time, setTime] = useState("");
@@ -14,56 +12,46 @@ function ActivitiesForm() {
   const [duration, setDuration] = useState("");
   const [heartrate, setHeartrate] = useState("");
 
-  // This function will be called when the user changes the selected activities
-  const handleChange = (event) => {
-    // Get the selected options from the event
-    const options = event.target.options;
-
-    // Create an array of the selected activities
-    const selectedActivities = [];
-    for (let i = 0; i < options.length; i++) {
-      if (options[i].selected) {
-        selectedActivities.push(options[i].value);
-      }
-    }
-
-    // Update the state with the selected activities
-    setActivities(selectedActivities);
-  };
-
-  // This function will be called when the user submits the form
-  const handleSubmit = (event) => {
+  //========ฟังก์ชั่นส่งข้อมูลไปหลังบ้าน========
+  const addActivity = (event) => {
     event.preventDefault();
+    const activityCard = {
+      activity: type,
+      description: description,
+      date: date,
+      time: time,
+      numberset: Number(numberset),
+      distance: Number(distance),
+      calburned: Number(calburned),
+      duration: Number(duration),
+      heartrate: heartrate
+  }
+  console.log("card", activityCard);
+}
+  
 
-    // Validate the user's input here
+// Validate the user's input here
+  const handleSubmit = () => {
     if (type === "") {
-      // Show an error message if the type is empty
       alert("Please enter the type of exercise");
     } else if (description === "") {
-      // Show an error message if the duration is empty
       alert("Please enter the description of the exercise");
-    } else if (duration === "") {
-      // Show an error message if the duration is empty
-      alert("Please enter the duration of the exercise");
     } else if (date === "") {
-      // Show an error message if the date is empty
       alert("Please enter the date of the exercise");
     } else if (time === "") {
-      // Show an error message if the date is empty
       alert("Please enter the time of the exercise");
     } else if (calburned === "") {
-      // Show an error message if the date is empty
       alert("Please enter the amount of calories burned");
-    } else {
-      // Submit the form
-    }
+    } else if (duration === "") {
+      alert("Please enter the duration of the exercise");
+    } 
   };
 
   return (
     <div className="activity-from-container">
       <div className="exercise_box">
         <h1>New Exercise Activity</h1>
-        <form onSubmit={handleSubmit}>
+        <form onSubmit={addActivity}>
           <div className="activity-from-form_container">
             <label for="activity">Activity</label>
             <select
@@ -165,7 +153,7 @@ function ActivitiesForm() {
           </div>
 
           <div className="activity-from-button_container">
-            <button className="activity-from-btn" type="submit">Save</button>
+            <button onClick={handleSubmit} className="activity-from-btn" type="submit">Save</button>
           </div>
         </form>
       </div>
