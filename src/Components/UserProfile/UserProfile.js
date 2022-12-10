@@ -8,13 +8,14 @@ const UserProfile = () => {
       <br></br>
       <br></br>
       <br></br>
+      <h1>
+        Johnny
+      </h1>
       <p>
-        Username: <strong>johnsmith</strong>
+        Username: johnsmith
       </p>
 
-      <p>
-        Nickname: <strong>Johnny</strong>
-      </p>
+
     </div>
   );
 };
