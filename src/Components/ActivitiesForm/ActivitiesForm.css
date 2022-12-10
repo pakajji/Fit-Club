@@ -59,3 +59,11 @@
     transition: 0.3s;
     width: 100%;
 }
+
+.activity-from-btn:hover {
+    background-color: var(--brown2)
+}
+
+.activity-from-btn:focus {
+    cursor: pointer;
+}
