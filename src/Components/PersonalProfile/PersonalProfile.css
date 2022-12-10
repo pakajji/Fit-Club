@@ -1,10 +1,4 @@
-*{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-.left {
+.personal-left {
     width: 45%;
     flex-grow: 1;
     display: flex;
@@ -12,7 +6,7 @@
     align-items: center;
 }
 
-.right {
+.personal-right {
     width: 45%;
     flex-grow: 2;
     display: flex;
@@ -20,7 +14,7 @@
     max-width: 400px;
 }
 
-.container {
+.personal-container {
     display: flex;
     flex-direction: row;
     /* padding: 200px; */
@@ -28,16 +22,17 @@
     min-width: 600px;
     margin: 0 auto;
     background-color: white;
+    padding: 100px 0;
 }
-
-.container .left .pic img {
+/* 
+.personal-container .personal-left .personal-pic img {
     height: auto;
     width: 100%;
     height: auto;
     justify-content: center;
     border-radius: 50%;
     box-shadow: 4px 3px 5px rgba(1, 1, 1, 0.1);
-}
+} */
 
 .personalinfo_box {
     max-width: 1200px;
@@ -59,7 +54,7 @@
     text-shadow: 4px 3px 5px rgba(1, 1, 1, 0.1);
   }
 
-.form_container {
+.personal-form_container {
     /* margin-top: 18px; */
     display:grid;
     flex-wrap: wrap;
@@ -68,20 +63,19 @@
     width: 100%;
 }
 
-.name_container {
+.personal-name_container {
     display: flex;
     gap: 10px;
     width: 100%;
     margin-top: 18px;   
 }
 
-.gender_container label {
+.personal-gender_container label {
     display: flex;
     border: 0px ridge;
     border-radius: 8px;
     text-align: center;
     gap: 10px;
-    width: 100%;
     margin-top: 18px;
     padding: 12px 200px;
     font-family: 'Prompt', sans-serif;
@@ -91,8 +85,8 @@
     background-color: orange;
 }
 
-.form_container input[type="text"],
- .form_container input[type="date"], .form_container input[type="number"] {
+.personal-form_container input[type="text"],
+ .personal-form_container input[type="date"], .personal-form_container input[type="number"] {
     border: 1px ridge;
     border-radius: 8px;
     padding: 10px 12px;
@@ -100,7 +94,7 @@
     text-align: center;
 }
 
-.form_container select {
+.personal-form_container select {
     border: 1px ridge;
     border-radius: 8px;
     padding: 10px 12px;
@@ -108,13 +102,13 @@
     text-align: center;
 }
 
-.button_container {
+.personal-button_container {
     display: flex;
     justify-content: center;
     margin-top: 20px;
 }
 
-button {
+.profile-from-btn {
     background-color: gray;
     border: 2px transparent;
     border-radius: 8px;

@@ -1,4 +1,4 @@
-img {
+.userprofile_box > img {
     height: 150px;
     width: 150px;
     height: auto;
@@ -13,4 +13,8 @@ img {
 .userprofile_box {
     justify-content: flex;
     text-align: center;
+}
+
+.userprofile_box > p {
+    font-size: 1rem;
 }
