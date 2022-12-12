@@ -1,5 +1,6 @@
 import "./ActivitiesForm.css";
 import React, { useState } from "react";
+import axios from 'axios';
 
 function ActivitiesForm() {
   const [description, setDescription] = useState("");
@@ -12,11 +13,25 @@ function ActivitiesForm() {
   const [duration, setDuration] = useState("");
   const [heartrate, setHeartrate] = useState("");
 
-  //========ฟังก์ชั่นส่งข้อมูลไปหลังบ้าน========
-  const addActivity = (event) => {
+  
+  // async function getActivity() {
+  //   const { data } = await axios.get('http://localhost:3000/')
+  //   console.log("data is" ,data)
+  // }
+
+  // getActivity()
+
+  //ส่งข้อมูลไป backend
+  async function addActivity(activityCard) {
+    axios.put('http://localhost:3000/activity', activityCard);
+  }
+
+
+  //Submit
+  const submitActivity = (event) => {
     event.preventDefault();
     const activityCard = {
-      activity: type,
+      type: type,
       description: description,
       date: date,
       time: time,
@@ -26,7 +41,9 @@ function ActivitiesForm() {
       duration: Number(duration),
       heartrate: heartrate
   }
-  console.log("card", activityCard);
+  //console.log("card", activityCard);
+  addActivity(activityCard)
+  alert("Your activity have been submitted")
 }
   
 
@@ -51,7 +68,7 @@ function ActivitiesForm() {
     <div className="activity-from-container">
       <div className="exercise_box">
         <h1>New Exercise Activity</h1>
-        <form onSubmit={addActivity}>
+        <form onSubmit={submitActivity}>
           <div className="activity-from-form_container">
             <label for="activity">Activity</label>
             <select
@@ -59,6 +76,7 @@ function ActivitiesForm() {
               onChange={(event) => setType(event.target.value)}
               required
             >
+              <option value="">-</option>
               <option value="run">Run</option>
               <option value="bicycleride">Bicycle Ride</option>
               <option value="swimming">Swimming</option>
@@ -103,7 +121,7 @@ function ActivitiesForm() {
           <div className="activity-from-form_container">
             <label for="numberset">Number of sets</label>
             <input
-              type="text"
+              type="number"
               placeholder="Optional"
               value={numberset}
               onChange={(event) => setNumberset(event.target.value)}
@@ -113,8 +131,8 @@ function ActivitiesForm() {
           <div className="activity-from-form_container">
             <label for="distance">Distance</label>
             <input
-              type="text"
-              placeholder="Optional"
+              type="number"
+              placeholder="Optional (meter)"
               value={distance}
               onChange={(event) => setDistance(event.target.value)}
             />
@@ -123,8 +141,8 @@ function ActivitiesForm() {
           <div className="activity-from-form_container">
             <label for="caloriesburned">Calories Burned</label>
             <input
-              type="text"
-              placeholder="Required"
+              type="number"
+              placeholder="Required (cal)"
               required
               value={calburned}
               onChange={(event) => setCalburned(event.target.value)}
@@ -134,9 +152,9 @@ function ActivitiesForm() {
           <div className="activity-from-form_container">
             <label for="time">The Duration of Your Exercise</label>
             <input
-              placeholder="Required"
+              placeholder="Required (minute)"
               required
-              type="time"
+              type="number"
               value={duration}
               onChange={(event) => setDuration(event.target.value)}
             />
