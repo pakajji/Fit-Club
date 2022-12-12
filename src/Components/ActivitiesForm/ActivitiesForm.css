@@ -32,13 +32,13 @@
     border-radius: 8px;
 }
 
-.activity-from-form_container input[type="text"], .activity-from-form_container input[type="date"], .activity-from-form_container input[type="time"] {
+.activity-from-form_container input[type="text"], .activity-from-form_container input[type="date"], .activity-from-form_container input[type="time"], .activity-from-form_container input[type="number"] {
     padding: 12px 12px;
     border: 1px ridge;
     border-radius: 8px;
 }
 
-.activity-from-form_container label, .activity-from-form_container label[type="text"], .activity-from-form_container label[type="date"], .activity-from-form_container label[type="label"]{
+.activity-from-form_container label, .activity-from-form_container label[type="text"], .activity-from-form_container label[type="date"], .activity-from-form_container label[type="label"], .activity-from-form_container label[type="number"]{
     justify-content: start;
     font-size: small;
     text-align: start;
