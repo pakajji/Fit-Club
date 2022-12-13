@@ -1,6 +1,8 @@
 import "./ActivitiesForm.css";
-import React, { useState } from "react";
-import axios from 'axios';
+import React, { useState ,useContext} from "react";
+import ActivityContext from '../Context/ActivityContext';
+const { v4: uuidv4 } = require('uuid');
+
 
 function ActivitiesForm() {
   const [description, setDescription] = useState("");
@@ -13,24 +15,14 @@ function ActivitiesForm() {
   const [duration, setDuration] = useState("");
   const [heartrate, setHeartrate] = useState("");
 
-  
-  // async function getActivity() {
-  //   const { data } = await axios.get('http://localhost:3000/')
-  //   console.log("data is" ,data)
-  // }
-
-  // getActivity()
-
-  //ส่งข้อมูลไป backend
-  async function addActivity(activityCard) {
-    axios.put('http://localhost:3000/activity', activityCard);
-  }
+  const { addActivity} = useContext(ActivityContext)
 
 
   //Submit
   const submitActivity = (event) => {
     event.preventDefault();
     const activityCard = {
+      id: uuidv4(),
       type: type,
       description: description,
       date: date,
