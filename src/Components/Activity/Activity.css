@@ -41,3 +41,22 @@
     text-align: start;
     margin: 0 16px;
 }
+
+.edit-delete-card {
+    display: flex;
+    justify-content: space-between;
+}
+
+.edit-delete-card > div >img{
+    height: 20px;
+    padding: 0 8px;
+}
+
+.edit-delete-card > div> img:hover{
+    cursor: pointer;
+}
+
+.edit-delete-card > span{
+    font-size: 16px;
+    padding-left: 16px;
+}
