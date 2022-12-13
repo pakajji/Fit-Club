@@ -1,30 +1,39 @@
 import './AllActivity.css'
 import Activity from '../Activity/Activity'
 import AddActivityCard from '../AddActivityCard/AddActivityCrad'
+import axios from 'axios';
+import { useState , useEffect } from 'react'
 
 const AllActivity = () => {
-    //ตรงนี้รับข้อมูลจากหน้าActivityของพี่ไต๋ก๋ง
-    const activity = [{
-        activity: 'swim',
-        time: 20,
-        distance: 100,
-        set: 2
-    },{
-        activity: 'run',
-        time: 30,
-        distance: 50,
-        set: 10
-    }]
     
+    const [activity, setActivity] = useState([])
+    
+
+    useEffect(() => async function getActivityCard() {
+        try {
+          const response = await axios.get('http://localhost:3000/activity');
+          await console.log(response.data)
+          await setActivity(response.data)
+        } catch (error) {
+          console.error(error);
+        }
+      }, [])
+
     return (
         <div>
             <h2 id="Dashboard" className="Activity_Summary">Activity Summary</h2>
             <div className="AllActivity">
             {activity.map(detail => {
-                return <Activity activity={detail.activity}
+                return <Activity type={detail.type}
+                                description={detail.description}
+                                date={detail.date}
                                 time={detail.time}
+                                numberset={detail.numberset}
                                 distance={detail.distance}
-                                set={detail.set}/>  
+                                calburned={detail.calburned}
+                                duration={detail.duration}
+                                heartrate={detail.heartrate}
+                                />  
             })}
             <AddActivityCard/>
             </div>
