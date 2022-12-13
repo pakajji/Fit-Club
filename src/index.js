@@ -8,7 +8,6 @@ import { BrowserRouter } from "react-router-dom";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
-  <React.StrictMode>
     <ErrorBoundary>
       <MenuCalContextProvider>
         <BrowserRouter>
@@ -16,5 +15,4 @@ root.render(
         </BrowserRouter>
     </MenuCalContextProvider>
     </ErrorBoundary>
-  </React.StrictMode>
 );
