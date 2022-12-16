@@ -2,7 +2,7 @@ import './Activity.css'
 import { useContext } from 'react'
 import ActivityContext from '../Context/ActivityContext';
 
-const Activity = ({ id, type, description, date, time, numberset, distance, calburned, duration, heartrate, onDelete }) => {
+const Activity = ({ id, type, title, description, date, time, numberset, distance, calburned, duration, heartrate }) => {
     
     let activityColor
     switch (type) {
@@ -32,10 +32,9 @@ const Activity = ({ id, type, description, date, time, numberset, distance, calb
 
     return (
         <div className={`activity-card ${activityColor}`}>
-            <h2>{type}</h2>
+            <h2>{title}</h2>
             <div className="activity-detail">
                 <p>{description}</p>
-                <p>{date} | {time}</p>
                 {numberset !== 0 && <p>Number of set : {numberset}</p>}
                 {distance && <p>Distance : {distance}</p>}
                 <p>Duration : {hour >= 1 && <span>{hour} hr</span>} {minute !== 0 && <span>{minute} min</span>}</p>
