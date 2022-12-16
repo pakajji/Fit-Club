@@ -6,7 +6,7 @@ import ActivityContext from '../Context/ActivityContext';
 
 const AllActivity = () => {
 
-    const { activities, isLoading, setShouldUpdate } = useContext(ActivityContext)
+    const { activities, isLoading } = useContext(ActivityContext)
 
     return (
         <div>
@@ -15,6 +15,7 @@ const AllActivity = () => {
                 {!isLoading && activities.map(detail => {
                     return <Activity id={detail.id}
                         key={detail.id}
+                        title={detail.title}
                         type={detail.type}
                         description={detail.description}
                         date={detail.date}
@@ -24,7 +25,6 @@ const AllActivity = () => {
                         calburned={detail.calburned}
                         duration={detail.duration}
                         heartrate={detail.heartrate}
-                        onDelete={() => setShouldUpdate(true)}
                     />
                 })}
                 <AddActivityCard />
