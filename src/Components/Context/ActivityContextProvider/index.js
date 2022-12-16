@@ -26,19 +26,19 @@ const ActivityContextProvider = ({children}) => {
     const [hikingDuration, setHikingDuration] = useState([])
 
     //อัพเดทกราฟพาย
-    // const activitiesDuration = async () => {
-    //   const run = await axios.get('http://localhost:3000/activity/run');
-    //   setRunDuration(run.data.duration)
-    //   const walk = await axios.get('http://localhost:3000/activity/walk');
-    //   setWalkDuration(walk.data.duration)
-    //   const swimming = await axios.get('http://localhost:3000/activity/swimming');
-    //   setSwimmingDuration(swimming.data.duration)
-    //   const bicycleride = await axios.get('http://localhost:3000/activity/bicycleride');
-    //   setBicyclerideDuration(bicycleride.data.duration)
-    //   const hiking = await axios.get('http://localhost:3000/activity/hiking');
-    //   setHikingDuration(hiking.data.duration)
-    //   setShouldUpdate(true)
-    // }
+    const activitiesDuration = async () => {
+      const run = await axios.get('http://localhost:3000/activity/run');
+      setRunDuration(run.data)
+      const walk = await axios.get('http://localhost:3000/activity/walk');
+      setWalkDuration(walk.data)
+      const swimming = await axios.get('http://localhost:3000/activity/swimming');
+      setSwimmingDuration(swimming.data)
+      const bicycleride = await axios.get('http://localhost:3000/activity/bicycleride');
+      setBicyclerideDuration(bicycleride.data)
+      const hiking = await axios.get('http://localhost:3000/activity/hiking');
+      setHikingDuration(hiking.data)
+      //setShouldUpdate(true)
+    }
 
     const [shouldUpdate, setShouldUpdate] = useState(true)
     const [isLoading, setIsLoading] = useState(false)
@@ -51,16 +51,7 @@ const ActivityContextProvider = ({children}) => {
         try {
           const activity = await axios.get('http://localhost:3000/activity');
           setActivities(activity.data)
-          // const run = await axios.get('http://localhost:3000/activity/run');
-          // setRunDuration(run.data.duration)
-          // const walk = await axios.get('http://localhost:3000/activity/walk');
-          // setWalkDuration(walk.data.duration)
-          // const swimming = await axios.get('http://localhost:3000/activity/swimming');
-          // setSwimmingDuration(swimming.data.duration)
-          // const bicycleride = await axios.get('http://localhost:3000/activity/bicycleride');
-          // setBicyclerideDuration(bicycleride.data.duration)
-          // const hiking = await axios.get('http://localhost:3000/activity/hiking');
-          // setHikingDuration(hiking.data.duration)
+          activitiesDuration()
           setIsLoading(false)
         } catch (error) {
           console.error(error);
