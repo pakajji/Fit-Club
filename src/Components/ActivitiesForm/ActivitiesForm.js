@@ -1,11 +1,12 @@
 import "./ActivitiesForm.css";
-import React, { useState ,useContext} from "react";
+import React, { useState, useContext } from "react";
 import ActivityContext from '../Context/ActivityContext';
 const { v4: uuidv4 } = require('uuid');
 
 
 function ActivitiesForm() {
   const [description, setDescription] = useState("");
+  const [title, setTitle] = useState("");
   const [date, setDate] = useState("");
   const [time, setTime] = useState("");
   const [numberset, setNumberset] = useState("");
@@ -15,7 +16,7 @@ function ActivitiesForm() {
   const [duration, setDuration] = useState("");
   const [heartrate, setHeartrate] = useState("");
 
-  const { addActivity} = useContext(ActivityContext)
+  const { addActivity } = useContext(ActivityContext)
 
 
   //Submit
@@ -24,6 +25,7 @@ function ActivitiesForm() {
     const activityCard = {
       id: uuidv4(),
       type: type,
+      title: title,
       description: description,
       date: date,
       time: time,
@@ -32,17 +34,19 @@ function ActivitiesForm() {
       calburned: Number(calburned),
       duration: Number(duration),
       heartrate: heartrate
+    }
+    //console.log("card", activityCard);
+    addActivity(activityCard)
+    alert("Your activity have been submitted")
   }
-  //console.log("card", activityCard);
-  addActivity(activityCard)
-  alert("Your activity have been submitted")
-}
-  
 
-// Validate the user's input here
+
+  // Validate the user's input here
   const handleSubmit = () => {
     if (type === "") {
       alert("Please enter the type of exercise");
+    } else if (title === "") {
+      alert("Please enter the title of the exercise");
     } else if (description === "") {
       alert("Please enter the description of the exercise");
     } else if (date === "") {
@@ -53,9 +57,9 @@ function ActivitiesForm() {
       alert("Please enter the amount of calories burned");
     } else if (duration === "") {
       alert("Please enter the duration of the exercise");
-    } 
+    }
   };
-
+  
   return (
     <div className="activity-from-container">
       <div className="exercise_box">
@@ -75,6 +79,17 @@ function ActivitiesForm() {
               <option value="walk">Walk</option>
               <option value="hiking">Hiking</option>
             </select>
+          </div>
+
+          <div className="activity-from-form_container">
+            <label for="title">Title</label>
+            <input
+              type="text"
+              placeholder="Required"
+              value={title}
+              onChange={(event) => setTitle(event.target.value)}
+              required
+            />
           </div>
 
           <div className="activity-from-form_container">
