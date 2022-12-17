@@ -3,7 +3,7 @@ import { useContext } from 'react'
 import ActivityContext from '../Context/ActivityContext';
 
 const Activity = ({ id, type, title, description, date, time, numberset, distance, calburned, duration, heartrate }) => {
-    
+
     let activityColor
     switch (type) {
         case 'walk':
@@ -24,10 +24,10 @@ const Activity = ({ id, type, title, description, date, time, numberset, distanc
         default: activityColor = ""
     }
 
-    let hour = Math.floor(duration/60)
-    let minute = duration%60
+    let hour = Math.floor(duration / 60)
+    let minute = duration % 60
 
-    const { removeActivity} = useContext(ActivityContext)
+    const { removeActivity } = useContext(ActivityContext)
 
 
     return (
@@ -44,8 +44,8 @@ const Activity = ({ id, type, title, description, date, time, numberset, distanc
             <div className='edit-delete-card'>
                 <span>{date} | {time}</span>
                 <div>
-                    <img alt='edit' src='http://cdn.onlinewebfonts.com/svg/img_221007.png'/>
-                    <img onClick={()=>removeActivity(id)} alt='delete' src='https://cdn-icons-png.flaticon.com/512/39/39220.png'/>
+                    <a href="/add-activity"><img alt='edit' src='http://cdn.onlinewebfonts.com/svg/img_221007.png' /></a>
+                    <img onClick={() => removeActivity(id)} alt='delete' src='https://cdn-icons-png.flaticon.com/512/39/39220.png' />
                 </div>
             </div>
         </div>

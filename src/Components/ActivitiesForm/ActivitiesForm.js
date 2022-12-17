@@ -4,7 +4,7 @@ import ActivityContext from '../Context/ActivityContext';
 const { v4: uuidv4 } = require('uuid');
 
 
-function ActivitiesForm() {
+function ActivitiesForm({id}) {
   const [description, setDescription] = useState("");
   const [title, setTitle] = useState("");
   const [date, setDate] = useState("");
@@ -22,21 +22,40 @@ function ActivitiesForm() {
   //Submit
   const submitActivity = (event) => {
     event.preventDefault();
-    const activityCard = {
-      id: uuidv4(),
-      type: type,
-      title: title,
-      description: description,
-      date: date,
-      time: time,
-      numberset: Number(numberset),
-      distance: Number(distance),
-      calburned: Number(calburned),
-      duration: Number(duration),
-      heartrate: heartrate
+    if(id){
+      const activityCard = {
+        id: id,
+        type: type,
+        title: title,
+        description: description,
+        date: date,
+        time: time,
+        numberset: Number(numberset),
+        distance: Number(distance),
+        calburned: Number(calburned),
+        duration: Number(duration),
+        heartrate: heartrate
+      }
+      console.log("have id",activityCard)
+      addActivity(activityCard)
+    } else {
+      const activityCard = {
+        id: uuidv4(),
+        type: type,
+        title: title,
+        description: description,
+        date: date,
+        time: time,
+        numberset: Number(numberset),
+        distance: Number(distance),
+        calburned: Number(calburned),
+        duration: Number(duration),
+        heartrate: heartrate
+      }
+      console.log("new id",activityCard)
+      addActivity(activityCard)
     }
-    //console.log("card", activityCard);
-    addActivity(activityCard)
+    
     alert("Your activity have been submitted")
   }
 
