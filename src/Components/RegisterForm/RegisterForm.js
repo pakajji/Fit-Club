@@ -86,7 +86,9 @@ function RegisterForm() {
             </label>
           </div>
           <div className="register-button_container">
-            <button className="register-btn" type="submit">Create Account</button>
+            <button className="register-btn" type="submit">
+              Create Account
+            </button>
           </div>
         </form>
       </div>
