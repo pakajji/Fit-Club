@@ -15,7 +15,7 @@ const ActivityContextProvider = ({children}) => {
 
     //เพิ่ม/อัพเดตการ์ดactivity
     const addActivity = async (activity) => {
-            await axios.put('http://localhost:3000/activity', activity);
+            await axios.put(`http://localhost:3000/activity/${activity.id}`, activity);
             setShouldUpdate(true)
     }
 
@@ -24,12 +24,6 @@ const ActivityContextProvider = ({children}) => {
             await axios.delete(`http://localhost:3000/activity/${id}`);
             setShouldUpdate(true)
     }
-
-    // const editActivity = async (id) => {
-    //   await axios.put(`http://localhost:3000/activity/${id}`);
-    //   setShouldUpdate(true)
-    // }
-
 
 
     const [runDuration, setRunDuration] = useState([])
@@ -50,7 +44,6 @@ const ActivityContextProvider = ({children}) => {
       setBicyclerideDuration(bicycleride.data)
       const hiking = await axios.get('http://localhost:3000/activity/hiking');
       setHikingDuration(hiking.data)
-      //setShouldUpdate(true)
     }
 
     const [shouldUpdate, setShouldUpdate] = useState(true)
