@@ -1,6 +1,7 @@
 import './Activity.css'
 import { useContext } from 'react'
 import ActivityContext from '../Context/ActivityContext';
+import { useNavigate } from 'react-router-dom'
 
 const Activity = ({ id, type, title, description, date, time, numberset, distance, calburned, duration, heartrate }) => {
 
@@ -28,7 +29,11 @@ const Activity = ({ id, type, title, description, date, time, numberset, distanc
     let minute = duration % 60
 
     const { removeActivity } = useContext(ActivityContext)
+    const navigate = useNavigate();
 
+    const toActivityForm=()=>{
+    navigate('/add-activity',{state:{id:id}});
+    }
 
     return (
         <div className={`activity-card ${activityColor}`}>
@@ -44,7 +49,7 @@ const Activity = ({ id, type, title, description, date, time, numberset, distanc
             <div className='edit-delete-card'>
                 <span>{date} | {time}</span>
                 <div>
-                    <a href="/add-activity"><img alt='edit' src='http://cdn.onlinewebfonts.com/svg/img_221007.png' /></a>
+                    <img onClick={toActivityForm} alt='edit' src='http://cdn.onlinewebfonts.com/svg/img_221007.png' />
                     <img onClick={() => removeActivity(id)} alt='delete' src='https://cdn-icons-png.flaticon.com/512/39/39220.png' />
                 </div>
             </div>
