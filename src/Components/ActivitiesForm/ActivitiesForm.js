@@ -1,8 +1,8 @@
 import "./ActivitiesForm.css";
 import React, { useState, useContext } from "react";
 import ActivityContext from '../Context/ActivityContext';
+import {useLocation} from 'react-router-dom';
 const { v4: uuidv4 } = require('uuid');
-
 
 function ActivitiesForm() {
   const [description, setDescription] = useState("");
@@ -17,13 +17,22 @@ function ActivitiesForm() {
   const [heartrate, setHeartrate] = useState("");
 
   const { addActivity } = useContext(ActivityContext)
-
+  const location = useLocation();
+  
+  //เช็คว่ามีไอดีแล้วรึยัง ถ้ายังให้สร้างไอดีใหม่
+  let id
+  if (location.state === null){
+    id = uuidv4()
+  }else {
+    id = location.state.id
+  }
+  console.log("id in form", id)
 
   //Submit
   const submitActivity = (event) => {
     event.preventDefault();
-    const activityCard = {
-      id: uuidv4(),
+      const activityCard = {
+      id: id,
       type: type,
       title: title,
       description: description,
@@ -35,9 +44,9 @@ function ActivitiesForm() {
       duration: Number(duration),
       heartrate: heartrate
     }
-    //console.log("card", activityCard);
+    console.log("activity card",activityCard)
     addActivity(activityCard)
-    alert("Your activity have been submitted")
+  alert("Your activity have been submitted")
   }
 
 

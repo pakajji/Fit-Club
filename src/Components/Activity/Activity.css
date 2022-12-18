@@ -47,12 +47,12 @@
     justify-content: space-between;
 }
 
-.edit-delete-card > div >img{
+.edit-delete-card > div > img ,a>img{
     height: 20px;
     padding: 0 8px;
 }
 
-.edit-delete-card > div> img:hover{
+.edit-delete-card > div> img,a>img:hover{
     cursor: pointer;
 }
 
