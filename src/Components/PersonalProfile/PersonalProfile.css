@@ -1,24 +1,12 @@
-.personal-left {
-    width: 45%;
-    flex-grow: 1;
-    display: flex;
-    max-width: 200px;
-    align-items: center;
-    justify-content: center;
-}
-
-.personal-right {
-    width: 45%;
-    flex-grow: 2;
+.personal {
     display: flex;
     flex-direction: column;
     max-width: 400px;
+    align-items: center;
 }
 
 .personal-container {
     display: flex;
-    flex-direction: row;
-    /* padding: 200px; */
     max-width: 1200px;
     margin: 0 auto;
     background-color: white;
@@ -39,7 +27,7 @@
     width: 900px;
     padding: 20px 20px 40px;
     display: flex;
-    justify-content: space-around;
+    justify-content: center;
     background-color: white;
     margin: 0 auto;
     margin-top: 50px;
@@ -116,6 +104,12 @@
     color: white;
     transition: 0.3s;
     width: 100%;
+}
+
+.profilepic {
+    height: 240px;
+    width: 240px;
+    border-radius: 24px;
 }
 
 @media only screen and (max-width: 768px) {
