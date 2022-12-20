@@ -2,16 +2,18 @@
     max-width: 900px;
     margin: 0 auto;
     padding: 100px 0;
+    font-size: 0.8rem;
 }
 
 .exercise_box {
-    max-width: 600px;
-    padding: 20px;
+    max-width: 560px;
+    padding: 36px 60px 52px;
     background-color: white;
     margin: 0 auto;
     margin-top: 50px;
     border-radius: 10px;
-    box-shadow: 4px 3px 5px rgba(1, 1, 1, 0.1);
+    box-shadow: 0px 3px 3px -2px rgb(0 0 0 / 20%),
+		0px 3px 4px 0px rgb(0 0 0 / 14%), 0px 1px 8px 0px rgb(0 0 0 / 12%);
 }
 
 .exercise_box h1 {
@@ -28,14 +30,16 @@
 .activity-from-form_container select {
     text-align: start;
     padding: 12px 12px;
-    border: 1px ridge;
+    border: none;
     border-radius: 8px;
+    background-color: #eff5e5;
 }
 
 .activity-from-form_container input[type="text"], .activity-from-form_container input[type="date"], .activity-from-form_container input[type="time"], .activity-from-form_container input[type="number"] {
     padding: 12px 12px;
-    border: 1px ridge;
+    border: none;
     border-radius: 8px;
+    background-color: #eff5e5;
 }
 
 .activity-from-form_container label, .activity-from-form_container label[type="text"], .activity-from-form_container label[type="date"], .activity-from-form_container label[type="label"], .activity-from-form_container label[type="number"]{
@@ -47,23 +51,21 @@
 .activity-from-button_container {
     display: flex;
     justify-content: center;
-    margin-top: 20px;
+    margin-top: 24px;
 }
 
 .activity-from-btn {
-    background-color: gray;
+    background-color: #b7e261;
     border: 2px transparent;
     border-radius: 8px;
     padding: 12px 200px;
-    color: white;
     transition: 0.3s;
     width: 100%;
+    font-size: large;
 }
 
 .activity-from-btn:hover {
-    background-color: var(--brown2)
-}
-
-.activity-from-btn:focus {
+    background-color: #9bce35;
+    border-radius: 24px;
     cursor: pointer;
 }
