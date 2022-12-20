@@ -1,15 +1,31 @@
 const mongoose = require("mongoose");
 
-module.exports = async () => {
+module.exports = () => {
+  const connectionParams = {
+    useNewUrlParser: true,
+    useUnifiedTopology: true,
+  };
   try {
-    const connectionParams = {
-      useNewUrlParser: true,
-      useCreateIndex: true,
-      useUnifiedTopology: true,
-    };
-    await mongoose.connect(process.env.DB, connectionParams);
+    mongoose.connect(process.env.MONGODB_URI, connectionParams);
     console.log("Connected to database successfully");
   } catch (error) {
-    console.log("Could not connect database!", error);
+    console.log(error);
+    console.log("Could not connect database!");
   }
 };
+
+// mongoose.set("strictQuery", false);
+
+// module.exports = async () => {
+//   const connectionParams = {
+//     useNewUrlParser: true,
+//     useUnifiedTopology: true,
+//   };
+//   try {
+//     await mongoose.connect(process.env.DB, connectionParams);
+//     console.log("Connected to database successfully");
+//   } catch (error) {
+//     console.log(error);
+//     console.log("Could not connect to database!");
+//   }
+// };
