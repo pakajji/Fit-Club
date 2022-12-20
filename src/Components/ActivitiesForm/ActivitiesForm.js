@@ -26,7 +26,6 @@ function ActivitiesForm() {
   }else {
     id = location.state.id
   }
-  console.log("id in form", id)
 
   //Submit
   const submitActivity = (event) => {
@@ -72,7 +71,7 @@ function ActivitiesForm() {
   return (
     <div className="activity-from-container">
       <div className="exercise_box">
-        <h1>New Exercise Activity</h1>
+        <h1>Exercise Activity</h1>
         <form onSubmit={submitActivity}>
           <div className="activity-from-form_container">
             <label for="activity">Activity</label>
@@ -94,7 +93,7 @@ function ActivitiesForm() {
             <label for="title">Title</label>
             <input
               type="text"
-              placeholder={location.state.title !== "" ? location.state.title : "Required"}
+              placeholder={location.state === null ? "Required" : location.state.title}
               value={title}
               onChange={(event) => setTitle(event.target.value)}
               required
@@ -105,7 +104,7 @@ function ActivitiesForm() {
             <label for="description">Description</label>
             <input
               type="text"
-              placeholder={location.state.description !== "" ? location.state.description : "Required"}
+              placeholder={location.state === null ? "Required" : location.state.description }
               value={description}
               onChange={(event) => setDescription(event.target.value)}
               required
@@ -116,7 +115,7 @@ function ActivitiesForm() {
             <label for="date">Date</label>
             <input
               type="date"
-              placeholder={location.state.date !== "" ? location.state.date : "DD/MM/YY"}
+              placeholder={location.state === null ? "DD/MM/YY" : location.state.date}
               value={date}
               onChange={(event) => setDate(event.target.value)}
               required
@@ -127,7 +126,7 @@ function ActivitiesForm() {
             <label for="time">Time</label>
             <input
               type="time"
-              placeholder={location.state.time !== "" ? location.state.time : "DD/MM/YY"}
+              placeholder={location.state === null ? "DD/MM/YY" : location.state.time}
               required
               value={time}
               onChange={(event) => setTime(event.target.value)}
@@ -138,7 +137,7 @@ function ActivitiesForm() {
             <label for="numberset">Number of sets</label>
             <input
               type="number"
-              placeholder={location.state.numberset !== "" ? location.state.numberset : "Optional"}
+              placeholder={location.state === null ? "Optional" : location.state.numberset}
               value={numberset}
               onChange={(event) => setNumberset(event.target.value)}
             />
@@ -148,7 +147,7 @@ function ActivitiesForm() {
             <label for="distance">Distance</label>
             <input
               type="number"
-              placeholder={location.state.distance !== "" ? location.state.distance : "Optional (meter)"}
+              placeholder={location.state === null ? "Optional (meter)" : location.state.distance}
               value={distance}
               onChange={(event) => setDistance(event.target.value)}
             />
@@ -158,7 +157,7 @@ function ActivitiesForm() {
             <label for="caloriesburned">Calories Burned</label>
             <input
               type="number"
-              placeholder={location.state.calburned !== "" ? location.state.calburned : "Required (cal)"}
+              placeholder={location.state === null ? "Required (cal)" : location.state.calburned}
               required
               value={calburned}
               onChange={(event) => setCalburned(event.target.value)}
@@ -168,7 +167,7 @@ function ActivitiesForm() {
           <div className="activity-from-form_container">
             <label for="time">The Duration of Your Exercise</label>
             <input
-              placeholder={location.state.duration !== "" ? location.state.duration : "Required (minute)"}
+              placeholder={location.state === null ? "Required (minute)" : location.state.duration}
               required
               type="number"
               value={duration}
@@ -180,7 +179,7 @@ function ActivitiesForm() {
             <label for="heartrate">Heart Rate</label>
             <input
               type="text"
-              placeholder={location.state.heartrate !== "" ? location.state.heartrate : "Optional"}
+              placeholder={location.state === null ? "Optional" : location.state.heartrate}
               value={heartrate}
               onChange={(event) => setHeartrate(event.target.value)}
             />
