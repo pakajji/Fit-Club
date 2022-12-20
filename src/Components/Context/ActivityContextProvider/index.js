@@ -4,7 +4,7 @@ import { useEffect } from "react"
 import axios from 'axios';
 
 export const instance = axios.create({
-  baseURL: 'http://localhost3000',
+  baseURL: 'http://localhost3001',
   withCredentials: true,
   validateStatus: ()=>true
 })
@@ -15,13 +15,13 @@ const ActivityContextProvider = ({children}) => {
 
     //เพิ่ม/อัพเดตการ์ดactivity
     const addActivity = async (activity) => {
-            await axios.put(`http://localhost:3000/activity/${activity.id}`, activity);
+            await axios.put(`http://localhost:3001/activity/${activity.id}`, activity);
             setShouldUpdate(true)
     }
 
     //ลบการ์ดactivity
     const removeActivity = async (id) => {
-            await axios.delete(`http://localhost:3000/activity/${id}`);
+            await axios.delete(`http://localhost:3001/activity/${id}`);
             setShouldUpdate(true)
     }
 
@@ -34,15 +34,15 @@ const ActivityContextProvider = ({children}) => {
 
     //อัพเดทกราฟพาย
     const activitiesDuration = async () => {
-      const run = await axios.get('http://localhost:3000/activity/run');
+      const run = await axios.get('http://localhost:3001/activity/run');
       setRunDuration(run.data)
-      const walk = await axios.get('http://localhost:3000/activity/walk');
+      const walk = await axios.get('http://localhost:3001/activity/walk');
       setWalkDuration(walk.data)
-      const swimming = await axios.get('http://localhost:3000/activity/swimming');
+      const swimming = await axios.get('http://localhost:3001/activity/swimming');
       setSwimmingDuration(swimming.data)
-      const bicycleride = await axios.get('http://localhost:3000/activity/bicycleride');
+      const bicycleride = await axios.get('http://localhost:3001/activity/bicycleride');
       setBicyclerideDuration(bicycleride.data)
-      const hiking = await axios.get('http://localhost:3000/activity/hiking');
+      const hiking = await axios.get('http://localhost:3001/activity/hiking');
       setHikingDuration(hiking.data)
     }
 
@@ -55,7 +55,7 @@ const ActivityContextProvider = ({children}) => {
             setIsLoading(true)
         async function getActivityCard() {
         try {
-          const activity = await axios.get('http://localhost:3000/activity');
+          const activity = await axios.get('http://localhost:3001/activity');
           setActivities(activity.data)
           activitiesDuration()
           setIsLoading(false)
