@@ -49,6 +49,17 @@
     color: white;
 }
 
+.logout_pop_btn {
+    font-size: 1.2rem;
+    border: none;
+    color: var(--brown1);
+    border-radius: 10px;
+    padding: 8px 16px;
+    margin: 24px 0 0;
+    cursor: pointer;
+    text-decoration: none;
+}
+
 .close_Profile_pop {
     display: block;
     position: relative;
