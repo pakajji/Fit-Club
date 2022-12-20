@@ -1,17 +1,16 @@
 import React, { useState } from "react";
 import ActivityContext from "../ActivityContext";
-import { useEffect } from "react"
-import axios from 'axios';
+import { useEffect } from "react";
+import axios from "axios";
 
 export const instance = axios.create({
   baseURL: 'http://localhost3001',
   withCredentials: true,
-  validateStatus: ()=>true
-})
+  validateStatus: () => true,
+});
 
-const ActivityContextProvider = ({children}) => {
-    
-    const [activities,setActivities] = useState([])
+const ActivityContextProvider = ({ children }) => {
+  const [activities, setActivities] = useState([]);
 
     //เพิ่ม/อัพเดตการ์ดactivity
     const addActivity = async (activity) => {
@@ -25,12 +24,11 @@ const ActivityContextProvider = ({children}) => {
             setShouldUpdate(true)
     }
 
-
-    const [runDuration, setRunDuration] = useState([])
-    const [walkDuration, setWalkDuration] = useState([])
-    const [swimmingDuration, setSwimmingDuration] = useState([])
-    const [bicyclerideDuration, setBicyclerideDuration] = useState([])
-    const [hikingDuration, setHikingDuration] = useState([])
+  const [runDuration, setRunDuration] = useState([]);
+  const [walkDuration, setWalkDuration] = useState([]);
+  const [swimmingDuration, setSwimmingDuration] = useState([]);
+  const [bicyclerideDuration, setBicyclerideDuration] = useState([]);
+  const [hikingDuration, setHikingDuration] = useState([]);
 
     //อัพเดทกราฟพาย
     const activitiesDuration = async () => {
@@ -46,14 +44,14 @@ const ActivityContextProvider = ({children}) => {
       setHikingDuration(hiking.data)
     }
 
-    const [shouldUpdate, setShouldUpdate] = useState(true)
-    const [isLoading, setIsLoading] = useState(false)
+  const [shouldUpdate, setShouldUpdate] = useState(true);
+  const [isLoading, setIsLoading] = useState(false);
 
-    useEffect(() => { 
-        if (shouldUpdate){
-            setShouldUpdate(false)
-            setIsLoading(true)
-        async function getActivityCard() {
+  useEffect(() => {
+    if (shouldUpdate) {
+      setShouldUpdate(false);
+      setIsLoading(true);
+      async function getActivityCard() {
         try {
           const activity = await axios.get('http://localhost:3001/activity');
           setActivities(activity.data)
@@ -61,18 +59,32 @@ const ActivityContextProvider = ({children}) => {
           setIsLoading(false)
         } catch (error) {
           console.error(error);
-          setIsLoading(false)
+          setIsLoading(false);
         }
       }
-      getActivityCard()
-    }}, [shouldUpdate])
+      getActivityCard();
+    }
+  }, [shouldUpdate]);
 
-    return (<ActivityContext.Provider value={{
-        activities,setActivities,addActivity,
-        isLoading,setShouldUpdate,
+  return (
+    <ActivityContext.Provider
+      value={{
+        activities,
+        setActivities,
+        addActivity,
+        isLoading,
+        setShouldUpdate,
         removeActivity,
-        runDuration,walkDuration,swimmingDuration,bicyclerideDuration,hikingDuration
-    }}>{children}</ActivityContext.Provider>)
-}
+        runDuration,
+        walkDuration,
+        swimmingDuration,
+        bicyclerideDuration,
+        hikingDuration,
+      }}
+    >
+      {children}
+    </ActivityContext.Provider>
+  );
+};
 
-export default ActivityContextProvider
+export default ActivityContextProvider;

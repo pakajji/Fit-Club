@@ -1,23 +1,18 @@
-require("dotenv").config();
-const express = require("express");
-const app = express();
-const cors = require("cors");
-const connection = require("./db");
-const userRoutes = require("./routes/users");
-const authRoutes = require("./routes/auth");
+const mongoose = require("mongoose");
+const app = require("./api/api.js");
 
-// database connection
-connection();
+const config = require("./config");
 
-// middlewares
-//parse requests of content-type - application/json
-app.use(express.json());
-app.use(cors());
+const boot = async () => {
+  console.log(config.mongoUri);
+  // Connect to mongodb
+  await mongoose.connect(config.mongoUri, config.mongoOptions);
+  // Start express server
+  app.listen(config.port, () => {
+    console.log(`Server is listening on port ${config.port}`);
+  });
+};
 
-// routes
-app.use("/api/users", userRoutes);
-app.use("/api/auth", authRoutes);
-
-// set port, listen for requests
-const port = process.env.PORT || 8080;
-app.listen(port, console.log(`Listening on port ${port}...`));
+boot();
+// eslint-disable-next-line no-unused-expressions
+console;
