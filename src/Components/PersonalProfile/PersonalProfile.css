@@ -3,13 +3,14 @@
     flex-direction: column;
     max-width: 400px;
     align-items: center;
+    font-size: 0.8rem;
+    
 }
 
 .personal-container {
     display: flex;
     max-width: 1200px;
     margin: 0 auto;
-    background-color: white;
     padding: 100px 0;
 }
 /* 
@@ -24,15 +25,16 @@
 
 .personalinfo_box {
     max-width: 1200px;
-    width: 900px;
-    padding: 20px 20px 40px;
+    width: 640px;
+    padding: 30px 20px 70px;
     display: flex;
     justify-content: center;
     background-color: white;
     margin: 0 auto;
     margin-top: 50px;
     border-radius: 10px;
-    box-shadow: 4px 3px 5px rgba(1, 1, 1, 0.1);
+    box-shadow: 0px 3px 3px -2px rgb(0 0 0 / 20%),
+		0px 3px 4px 0px rgb(0 0 0 / 14%), 0px 1px 8px 0px rgb(0 0 0 / 12%);
 }
 
 .personalinfo_box h1, h2, h3 {
@@ -60,17 +62,11 @@
 
 .personal-gender_container label {
     display: flex;
-    border: 0px ridge;
+    justify-content: center;
     border-radius: 8px;
-    text-align: center;
-    gap: 10px;
     margin-top: 18px;
     padding: 12px 200px;
-    font-family: 'Prompt', sans-serif;
-    font-size: small;
-    font-weight: lighter;
-    color: white;
-    background-color: orange;
+    background-color: #fac85d;
 }
 
 .personal-form_container input[type="text"],
@@ -97,13 +93,19 @@
 }
 
 .profile-from-btn {
-    background-color: gray;
+    background-color: #fac85d;
     border: 2px transparent;
     border-radius: 8px;
     padding: 12px 200px;
-    color: white;
     transition: 0.3s;
     width: 100%;
+    font-size: large;
+}
+
+.profile-from-btn:hover {
+    background-color: #e4ab31;
+    border-radius: 24px;
+    cursor: pointer;
 }
 
 .profilepic {
