@@ -22,7 +22,6 @@ const Signup = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-
     // Validate the user's input here
     if (data.firstName === "") {
       // Show an error message if the name is empty
@@ -42,12 +41,11 @@ const Signup = () => {
     } else {
       // Submit the form
     }
-
     try {
-      const url = "http://localhost:3000/signup";
+      const url = "http://localhost:3001/api/users";
       const { data: res } = await axios.post(url, data);
-      navigate("/login");
       console.log(res.message);
+      navigate("/login");
     } catch (error) {
       if (
         error.response &&
@@ -71,7 +69,12 @@ const Signup = () => {
           </Link>
         </div>
         <div className={styles.right}>
-          <form className={styles.form_container} onSubmit={handleSubmit}>
+          <form
+            className={styles.form_container}
+            onSubmit={(e) => {
+              handleSubmit(e);
+            }}
+          >
             <h1>Create Account</h1>
             <input
               type="text"
