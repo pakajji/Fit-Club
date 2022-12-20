@@ -6,7 +6,7 @@ const express = require("express");
 const app = express();
 const cors = require("cors");
 const mongoose = require("mongoose");
-const port = process.env.BACKED_PORT || 3001;
+const port = process.env.BACKEND_PORT || 3001;
 
 const config = require("../config");
 
@@ -32,7 +32,7 @@ app.use(
       "http://localhost:3001",
       "https://fit-club-rosy.vercel.app",
     ],
-    optionsSuccessStatus: 200, // some legacy browsers (IE11, various SmartTVs) choke on 204
+    optionsSuccessStatus: 200,
   })
 );
 
