@@ -1,11 +1,12 @@
 import { useState } from "react";
 import axios from "axios";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import styles from "./styles.module.css";
 
 const Login = () => {
   const [data, setData] = useState({ email: "", password: "" });
   const [error, setError] = useState("");
+  const navigate = useNavigate();
 
   const handleChange = ({ currentTarget: input }) => {
     setData({ ...data, [input.name]: input.value });
@@ -14,10 +15,11 @@ const Login = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const url = "http://localhost:8080/api/auth";
+      const url = "http://localhost:3001/api/auth";
       const { data: res } = await axios.post(url, data);
       localStorage.setItem("token", res.data);
-      window.location = "/";
+      // window.location = "/";
+      navigate("/");
     } catch (error) {
       if (
         error.response &&
@@ -33,7 +35,12 @@ const Login = () => {
     <div className={styles.login_container}>
       <div className={styles.login_form_container}>
         <div className={styles.left}>
-          <form className={styles.form_container} onSubmit={handleSubmit}>
+          <form
+            className={styles.form_container}
+            onSubmit={(e) => {
+              handleSubmit(e);
+            }}
+          >
             <h1>Login to Your Account</h1>
             <input
               type="email"

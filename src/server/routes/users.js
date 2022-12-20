@@ -1,11 +1,8 @@
-const { User, validate } = require("../models/user");
-const auth = require("../middleware/auth");
-
-const bcrypt = require("bcrypt");
-const express = require("express");
 const router = require("express").Router();
+const { User, validate } = require("../Models/user");
+const bcrypt = require("bcrypt");
 
-router.post("/signup", async (req, res) => {
+router.post("/", async (req, res) => {
   try {
     const { error } = validate(req.body);
     if (error)
@@ -19,22 +16,45 @@ router.post("/signup", async (req, res) => {
 
     const salt = await bcrypt.genSalt(Number(process.env.SALT));
     const hashPassword = await bcrypt.hash(req.body.password, salt);
-    await new User({ ...req.body, password: hashPassword }).save();
 
+    await new User({ ...req.body, password: hashPassword }).save();
     res.status(201).send({ message: "User created successfully" });
   } catch (error) {
     res.status(500).send({ message: "Internal Server Error" });
   }
 });
 
-router.get("/signup", auth, async (req, res) => {
-  try {
-    const user = await User.findById(req.user._id).select("-password -__v");
-    res.send(user);
-  } catch (error) {
-    console.log(error);
-    res.send("An error occured");
-  }
+router.get("/", async (req, res) => {
+  res.send({ message: "Hello, world!" });
 });
 
 module.exports = router;
+
+// require("dotenv").config();
+// const router = require("express").Router();
+// const { User, validate } = require("../Models/user");
+// const bcrypt = require("bcrypt");
+
+// router.post("/", async (req, res) => {
+//   try {
+//     const { error } = validate(req.body);
+//     if (error)
+//       return res.status(400).send({ message: error.details[0].message });
+
+//     const user = await User.findOne({ email: req.body.email });
+//     if (user)
+//       return res
+//         .status(409)
+//         .send({ message: "User with given email already Exist!" });
+
+//     const salt = await bcrypt.genSalt(Number(process.env.SALT));
+//     const hashPassword = await bcrypt.hash(req.body.password, salt);
+
+//     await new User({ ...req.body, password: hashPassword }).save();
+//     res.status(201).send({ message: "User created successfully" });
+//   } catch (error) {
+//     res.status(500).send({ message: "Internal Server Error" });
+//   }
+// });
+
+// module.exports = router;
