@@ -27,15 +27,10 @@ function PersonalProfile() {
   // };
 
 
-  // const imgprofile = async () => {
-  //   const img = await axios.get('http://localhost:3000/profile');
-  //   setPicProfile(img.data.picUrl)
-  // }
-
   //picProfile ? picProfile : picUrl
 
   const addProflie = async (profile) => {
-    await axios.put('http://localhost:3000/profile', profile);
+    await axios.put('http://localhost:3001/profile', profile);
 }
   
   const submitProfile = (event) => {
