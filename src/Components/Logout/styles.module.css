@@ -1,0 +1,15 @@
+.white_btn {
+	border: none;
+	outline: none;
+	padding: 12px 0;
+	background-color: #a7dff1;
+	color: #FFF;
+	border-radius: 10px;
+	width: 120px;
+	font-weight: bold;
+	font-size: 18px;
+	cursor: pointer;
+
+	display: flex;
+	justify-content: center;
+}
