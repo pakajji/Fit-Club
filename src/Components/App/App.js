@@ -8,6 +8,7 @@ import Logout from "../Logout/Logout";
 import Overview from "../Overview/Overview";
 import ActivitiesForm from "../ActivitiesForm/ActivitiesForm";
 import PersonalProfile from "../PersonalProfile/PersonalProfile";
+import PersonalProfileNewLayOut from "../PersonalProfile/PersonalProfileNewLayOut";
 
 function App() {
   const user = localStorage.getItem("token");
@@ -24,6 +25,10 @@ function App() {
         <Route path="/overview" exact element={<Overview />}></Route>
         <Route path="/add-activity" element={<ActivitiesForm />}></Route>
         <Route path="/profile" element={<PersonalProfile />}></Route>
+        <Route
+          path="/newprofile"
+          element={<PersonalProfileNewLayOut />}
+        ></Route>
       </Routes>
     </div>
   );
