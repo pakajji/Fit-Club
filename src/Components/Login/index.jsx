@@ -19,7 +19,7 @@ const Login = () => {
       const { data: res } = await axios.post(url, data);
       localStorage.setItem("token", res.data);
       // window.location = "/";
-      navigate("/");
+      navigate("/profile");
     } catch (error) {
       if (
         error.response &&
