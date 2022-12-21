@@ -31,15 +31,15 @@
     text-align: start;
     padding: 12px 12px;
     border: none;
-    border-radius: 8px;
-    background-color: #eff5e5;
+    border-radius: 10px;
+    background-color: #edf5f3;
 }
 
 .activity-from-form_container input[type="text"], .activity-from-form_container input[type="date"], .activity-from-form_container input[type="time"], .activity-from-form_container input[type="number"] {
     padding: 12px 12px;
     border: none;
-    border-radius: 8px;
-    background-color: #eff5e5;
+    border-radius: 10px;
+    background-color: #edf5f3;
 }
 
 .activity-from-form_container label, .activity-from-form_container label[type="text"], .activity-from-form_container label[type="date"], .activity-from-form_container label[type="label"], .activity-from-form_container label[type="number"]{
@@ -55,17 +55,31 @@
 }
 
 .activity-from-btn {
-    background-color: #b7e261;
+    /* background-color: #b7e261;
     border: 2px transparent;
     border-radius: 8px;
     padding: 12px 200px;
-    transition: 0.3s;
     width: 100%;
-    font-size: large;
+    font-size: large; */
+    border: 2px transparent;
+	border-radius: 20px;
+	outline: none;
+	padding: 12px;
+    transition: 0.3s;
+	background-color: #86e3ce;
+	border-radius: 20px;
+	width: 180px;
+	font-weight: bold;
+	font-size: 14px;
+	cursor: pointer;
+    color: white;
+
+
+
 }
 
 .activity-from-btn:hover {
-    background-color: #9bce35;
-    border-radius: 24px;
-    cursor: pointer;
+	background-color: #86e3ce;
+	color: black;
+	/* margin: 10px; */
 }
