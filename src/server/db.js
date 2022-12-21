@@ -1,4 +1,5 @@
 const mongoose = require("mongoose");
+const config = require("./config");
 
 module.exports = () => {
   const connectionParams = {
@@ -6,26 +7,10 @@ module.exports = () => {
     useUnifiedTopology: true,
   };
   try {
-    mongoose.connect(process.env.MONGODB_URI, connectionParams);
+    mongoose.connect(config.mongoUri, connectionParams);
     console.log("Connected to database successfully");
   } catch (error) {
     console.log(error);
     console.log("Could not connect database!");
   }
 };
-
-// mongoose.set("strictQuery", false);
-
-// module.exports = async () => {
-//   const connectionParams = {
-//     useNewUrlParser: true,
-//     useUnifiedTopology: true,
-//   };
-//   try {
-//     await mongoose.connect(process.env.DB, connectionParams);
-//     console.log("Connected to database successfully");
-//   } catch (error) {
-//     console.log(error);
-//     console.log("Could not connect to database!");
-//   }
-// };

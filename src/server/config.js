@@ -12,4 +12,6 @@ module.exports = {
     retryWrites: true,
     w: "majority",
   },
+  jwtPrivateKey: process.env.JWTPRIVATEKEY,
+  salt: process.env.SALT,
 };

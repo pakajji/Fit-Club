@@ -1,14 +1,14 @@
-const path = require("path");
-require("dotenv").config({ path: path.resolve(".env") });
+// const path = require("path");
+// require("dotenv").config({ path: path.resolve(".env") });
+
+const config = require("../config");
 
 const express = require("express");
 
 const app = express();
 const cors = require("cors");
 const mongoose = require("mongoose");
-const port = process.env.BACKEND_PORT || 3001;
-
-const config = require("../config");
+const port = config.port || 3001;
 
 // const connection = require("./db");
 const userRoutes = require("../routes/users");
