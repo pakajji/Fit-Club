@@ -6,7 +6,7 @@
     font-size: 62.5%;
     scroll-behavior: smooth scroll;
     color: var(--brown1);
-    background-color: white;
+    background-color: #f5f5f5;
 }
 
 :root {
