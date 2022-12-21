@@ -25,12 +25,6 @@ function App() {
         <Route path="/add-activity" element={<ActivitiesForm />}></Route>
         <Route path="/profile" element={<PersonalProfile />}></Route>
       </Routes>
-
-      {/*
-        <Route path="/overview" exact element={<Overview />}></Route>
-        <Route path="/add-activity" element={<ActivitiesForm />}></Route>
-        <Route path="/profile" element={<PersonalProfile />}></Route>
-    */}
     </div>
   );
 }

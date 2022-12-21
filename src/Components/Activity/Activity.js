@@ -32,7 +32,17 @@ const Activity = ({ id, type, title, description, date, time, numberset, distanc
     const navigate = useNavigate();
 
     const toActivityForm=()=>{
-    navigate('/add-activity',{state:{id:id}});
+    navigate('/add-activity',{state:{id:id,
+        type: type,
+        title: title,
+        description: description,
+        date: date,
+        time: time,
+        numberset: numberset,
+        distance: distance,
+        calburned: calburned,
+        duration: duration,
+        heartrate: heartrate }});
     }
 
     return (
