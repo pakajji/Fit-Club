@@ -1,5 +1,7 @@
-const path = require("path");
-require("dotenv").config({ path: path.resolve(".env") });
+// const path = require("path");
+// require("dotenv").config({ path: path.resolve(".env") });
+
+const config = require("../config");
 
 const mongoose = require("mongoose");
 const jwt = require("jsonwebtoken");
@@ -24,8 +26,8 @@ const complexityOptions = {
 };
 
 userSchema.methods.generateAuthToken = function () {
-  console.log("JWT", process.env.JWTPRIVATEKEY);
-  const token = jwt.sign({ _id: this._id }, process.env.JWTPRIVATEKEY, {
+  console.log("JWT", config.jwtPrivateKey);
+  const token = jwt.sign({ _id: this._id }, config.jwtPrivateKey, {
     expiresIn: "7d",
   });
   return token;
