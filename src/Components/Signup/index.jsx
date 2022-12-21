@@ -45,6 +45,7 @@ const Signup = () => {
       const url = "http://localhost:3001/api/users";
       const { data: res } = await axios.post(url, data);
       console.log(res.message);
+      alert("Sigup successful");
       navigate("/login");
     } catch (error) {
       if (
